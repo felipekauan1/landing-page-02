@@ -4,14 +4,13 @@
 
 :root {
     --font-padrao: 'Poppins', sans-serif;
-    ;
-    --color1: rgb(34, 34, 34);
-    --color2: rgb(132, 14, 201);
+    --color1: #fff;
+    --color2: #56382f;
 }
 
 body {
     background-color: var(--color1);
-    color: #fff;
+    color: var(--color2);
     font-family: var(--font-padrao);
     max-width: 1200px;
     margin: 0 auto;
@@ -27,13 +26,13 @@ body>header>nav {
 
 body>header>nav>ul>a {
     text-decoration: none;
-    color: #fff;
+    color: var(--color2);
     transition: .3s;
     margin: 20px;
 }
 
 body>header>nav>ul>a:hover {
-    color: var(--color2);
+    color: #fe8331;
 }
 
 body>header>nav>ul>a>li {
@@ -43,13 +42,13 @@ body>header>nav>ul>a>li {
 
 body>header>nav>ul>a>li#cadastrar {
     padding: 15px;
-    border: 2px solid var(--color2);
-    border-radius: 15px; 
+    border: 2px solid #fe8331;
+    border-radius: 15px;
 }
 
 body>header>nav>ul>a>li#cadastrar:hover {
-    background-color: var(--color2);
-    color: #fff;
+    background-color: #fe8331;
+    color: var(--color2);
 }
 
 body>main {
@@ -59,9 +58,14 @@ body>main {
     margin-top: 50px;
 }
 
+body>main>aside {
+    width: 50%;
+}
+
 body>main>aside>h2 {
     font-size: 3.3em;
     line-height: 10px;
+    color: #fe8331;
 }
 
 body>main>aside>h2#primeiro-h2 {
@@ -72,22 +76,27 @@ body>main>aside>form>input {
     width: 80%;
     padding: 20px;
     margin: 10px;
-    border: none;
+    border: 2px solid var(--color2);
     border-radius: 20px;
     outline: none;
 }
 
 body>main>aside>form>input[type=submit] {
     width: 35%;
-    background-color: var(--color2);
+    background-color: #fe8331;
     cursor: pointer;
+    border: none;
+}
+
+body>main>article {
+    width: 50%;
 }
 
 @media screen and (max-width: 1115px) {
     body {
         flex-direction: column;
     }
-    
+
     body>header>nav {
         flex-direction: column;
         justify-content: center;
@@ -99,14 +108,33 @@ body>main>aside>form>input[type=submit] {
         flex-direction: column;
     }
 
+    body>main>aside {
+        width: 100%;
+    }
+
     body>main>article {
         display: none;
     }
 }
 
-@media screen and (max-width: 695px) {
-    body>header>nav>ul>a>li {
-        display: block;
+@media screen and (max-width: 1050px) {
+    body>main>aside {
+        width: 100%;
+    }
+
+    body>main>aside>h2 {
+        line-height: 50px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body>header {
+        display: none;
+    }
+
+    body>main>aside {
+        width: 100%;
     }
 
     body>main>aside>h2 {
